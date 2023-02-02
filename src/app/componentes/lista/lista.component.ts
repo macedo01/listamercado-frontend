@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Lista } from 'src/app/model/lista';
 import { ListasService } from 'src/app/servicos/listas.service';
 
@@ -25,7 +24,7 @@ export class ListaComponent implements OnInit {
       (res: Lista[]) => {
         this.listas = res;
       },
-      (err) => {alert("Erro ao recuperar listas de compras")}    );
+      (err : any) => {alert("Erro ao recuperar listas de compras" + err)}    );
   }
 
   public cadastrarLista(){
